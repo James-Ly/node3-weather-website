@@ -90,9 +90,9 @@ app.get('/weather', (req, res) => {
     }
     geocode(req.query.address, (error, data) => {
         if (error) {
-            res.send({error: error})
+            res.send({ error: error })
         } else {
-            forecast(data.latitude, data.longitude, (error, forecastData) => {
+            forecast(data.longitude, data.latitude, (error, forecastData) => {
                 if (error) {
                     res.send({
                         error: error
@@ -142,5 +142,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server is up on port '+port)
+    console.log('Server is up on port ' + port)
 })

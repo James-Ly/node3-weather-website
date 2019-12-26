@@ -27,9 +27,10 @@ const geocode = (address, callback) => {
             callback('Unable to find location. Try another search.', undefined)
         } else {
             const data = res.body.features[0]
+            console.log(data)
             callback(undefined, {
-                latitude: data.center[0],
-                longitude: data.center[1],
+                latitude: data.center[1],
+                longitude: data.center[0],
             })
         }
     })
