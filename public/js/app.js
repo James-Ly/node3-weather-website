@@ -13,7 +13,7 @@ const weatherSearch = (location = 'Saigon') => {
             if (data.error) {
                 messageOne.textContent = data.error
             } else {
-                messageOne.textContent = data.forecastData
+                messageOne.textContent = data.forecastData + '. Humidity level: ' + data.fData.humidity
                 messageTwo.textContent = 'Latitude: ' + data.data.latitude + ', Longitude: ' + data.data.longitude
             }
 

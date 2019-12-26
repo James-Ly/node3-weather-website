@@ -92,7 +92,7 @@ app.get('/weather', (req, res) => {
         if (error) {
             res.send({ error: error })
         } else {
-            forecast(data.longitude, data.latitude, (error, forecastData) => {
+            forecast(data.longitude, data.latitude, (error, forecastData, fData) => {
                 if (error) {
                     res.send({
                         error: error
@@ -100,7 +100,8 @@ app.get('/weather', (req, res) => {
                 } else {
                     res.send({
                         data: data,
-                        forecastData: forecastData
+                        forecastData: forecastData,
+                        fData:fData
                     })
                 }
             })
