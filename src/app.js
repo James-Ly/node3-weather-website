@@ -14,6 +14,9 @@ console.log(path.join(__dirname, '../public'))
 
 const app = express()
 
+//Modify the port value for heroku
+const port = process.env.PORT || 3000
+
 // set handlebars for expressjs, engine and views
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
@@ -138,6 +141,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
